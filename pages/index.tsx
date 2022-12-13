@@ -1,3 +1,4 @@
+import Footer from 'components/Footer';
 import Main from 'components/Main';
 import { events } from 'data/events';
 import { HeaderSectionModel, headerSections } from 'data/headerSections';
@@ -20,6 +21,7 @@ export default function Home({ reviews, headerSections }: Props) {
       </Head>
       <Header headerSections={headerSections} />
       <Main events={events} reviews={reviews} />
+      <Footer />
     </>
   );
 }

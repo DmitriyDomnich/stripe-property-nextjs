@@ -26,8 +26,6 @@ const StyledLogo = styled(Image)`
 `;
 
 const Logo = ({ height, width, ...props }: Props) => {
-  console.log(props);
-
   return <StyledLogo height={height} width={width} {...props} />;
 };
 
