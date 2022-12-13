@@ -1,10 +1,8 @@
-import SvgIcon from 'components/SvgIcon';
-import Image from 'next/image';
 import React, { useCallback, useState } from 'react';
+import Image from 'next/image';
 import styled from 'styled-components';
-import { headerSections } from '../../data/headerSections';
+import { HeaderSectionModel } from '../../data/headerSections';
 import Logo from '../Logo';
-import HeaderSections from './HeaderSections';
 import HeaderSection from './HeaderSections/HeaderSection';
 import Menu from './Menu';
 import Socials from './Socials';
@@ -13,7 +11,6 @@ const Wrapper = styled.div`
   display: flex;
   min-height: 100vh;
 `;
-
 const BackgroundImage = styled.div`
   flex-basis: 95%;
   background-image: url('/images/header.png');
@@ -65,7 +62,11 @@ const VerticalBar = styled.div`
   }
 `;
 
-const Header = () => {
+type Props = {
+  headerSections: HeaderSectionModel[];
+};
+
+const Header = ({ headerSections }: Props) => {
   const [selectedSection, setSelectedSection] = useState(0);
 
   const selectSection = useCallback(

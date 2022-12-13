@@ -1,17 +1,30 @@
 import React from 'react';
+import { ReviewModel } from 'data/reviews';
 import styled from 'styled-components';
+import Gallery from './Gallery';
+import Reviews from './Reviews';
 import MainTitle from './Title';
-
-type Props = {};
+import Units from './Units';
+import Events from './Events';
+import { EventModel } from 'data/events';
 
 const MainWrapper = styled.main`
-  padding: 120px;
+  padding-block: 120px;
 `;
 
-const Main = () => {
+type Props = {
+  reviews: ReviewModel[];
+  events: EventModel[];
+};
+
+const Main = ({ reviews, events }: Props) => {
   return (
     <MainWrapper>
       <MainTitle />
+      <Gallery />
+      <Units />
+      <Reviews reviews={reviews} />
+      <Events events={events} />
     </MainWrapper>
   );
 };

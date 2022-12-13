@@ -1,8 +1,16 @@
 import Main from 'components/Main';
+import { events } from 'data/events';
+import { HeaderSectionModel, headerSections } from 'data/headerSections';
+import { ReviewModel, userReviews } from 'data/reviews';
 import Head from 'next/head';
 import Header from '../components/Header';
 
-export default function Home() {
+type Props = {
+  reviews: ReviewModel[];
+  headerSections: HeaderSectionModel[];
+};
+
+export default function Home({ reviews, headerSections }: Props) {
   return (
     <>
       <Head>
@@ -10,8 +18,18 @@ export default function Home() {
         <meta name='description' content='Stripe property group' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <Header />
-      <Main />
+      <Header headerSections={headerSections} />
+      <Main events={events} reviews={reviews} />
     </>
   );
+}
+
+export async function getStaticProps() {
+  return {
+    props: {
+      reviews: userReviews,
+      headerSections,
+      events,
+    },
+  };
 }
