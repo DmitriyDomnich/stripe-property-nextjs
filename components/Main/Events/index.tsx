@@ -31,17 +31,20 @@ const Card = styled.div<{ height?: number }>`
     grid-column: 3 / 4;
     grid-row: 2 / 4;
   }
-
-  padding: 32px 48px;
+  padding: 8px 16px;
   border: 1px solid rgba(22, 28, 36, 0.1);
   border-radius: 4px;
   position: relative;
+  overflow: hidden;
+
+  @media (min-width: 992px) {
+    padding: 32px 48px;
+  }
 `;
 const FirstCardWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20px;
-
   span {
     padding-left: 0.35rem;
   }
@@ -59,6 +62,13 @@ const FirstCardWrapper = styled.div`
     color: #637381;
     font-size: 16px;
     font-weight: 400;
+    @media (max-width: 1100px) {
+      display: -webkit-box;
+      -webkit-line-clamp: 5;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
   }
   h5 {
     &:hover {
@@ -74,10 +84,13 @@ const ImageCard = styled(Card)`
   padding: 0;
   border: none;
   background-color: #1f5085;
-  padding: 32px 48px;
+  padding: 8px 16px;
   color: #fff;
   display: flex;
   flex-direction: column-reverse;
+  @media (min-width: 992px) {
+    padding: 32px 48px;
+  }
   .bg-wrapper {
     height: 100%;
     width: 100%;

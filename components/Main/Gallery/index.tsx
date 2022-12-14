@@ -10,7 +10,7 @@ const Wrapper = styled.div`
 const FlexContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-  column-gap: 6.5%;
+  column-gap: 1.5%;
   row-gap: 100px;
   & > * {
     display: flex;
@@ -19,27 +19,48 @@ const FlexContainer = styled.div`
   * img {
     width: 100%;
   }
+  @media (min-width: 568px) {
+    column-gap: 3.5%;
+  }
+  @media (min-width: 992px) {
+    column-gap: 6.5%;
+  }
 `;
 const BedWrapper = styled.div`
   justify-content: flex-end;
   flex-basis: 55%;
   padding-top: 5rem;
-
+  padding-left: 0;
   > :first-child {
     margin-left: 15%;
     margin-top: 184px;
   }
+  @media (min-width: 992px) {
+    padding-left: 6rem;
+  }
 `;
 const StreetWrapper = styled.div`
   flex-basis: 35%;
+  flex-grow: 1;
+  @media (min-width: 992px) {
+    flex-grow: 0;
+  }
 `;
 const OfficeWrapper = styled.div`
   flex-basis: 40%;
+  padding-left: 0;
   padding-top: 8rem;
-  padding-left: 6rem;
+
+  @media (min-width: 992px) {
+    padding-left: 6rem;
+  }
 `;
 const RoomWrapper = styled.div`
   flex-basis: 50%;
+  flex-grow: 1;
+  @media (min-width: 992px) {
+    flex-grow: 0;
+  }
 `;
 const FeaturedText = styled.div`
   max-width: 608px;

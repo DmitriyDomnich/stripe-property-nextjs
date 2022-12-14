@@ -17,6 +17,10 @@ const Wrapper = styled.div`
   flex-basis: 25%;
   align-items: center;
 
+  img {
+    min-height: 48px;
+  }
+
   &:not(:last-child) {
     border-right: #161c241a 1px solid;
   }

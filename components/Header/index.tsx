@@ -16,7 +16,9 @@ const BackgroundImage = styled.div`
   background-image: url('/images/header.png');
   background-size: cover;
   background-repeat: no-repeat;
-  aspect-ratio: 16 / 7;
+  max-width: 100%;
+  height: auto;
+  overflow: hidden;
   position: relative;
   display: flex;
 `;

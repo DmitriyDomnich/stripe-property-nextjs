@@ -7,11 +7,14 @@ import { flushSync } from 'react-dom';
 
 const Wrapper = styled.section`
   background-color: #f3f3f5;
-  padding: 10rem 5rem;
+  padding: 5rem 0.25rem;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 3rem;
+  @media (min-width: 768px) {
+    padding: 10rem 5rem;
+  }
 `;
 const ScrollButton = styled.div<{ align?: 'start' | 'end' }>`
   cursor: pointer;
@@ -22,10 +25,13 @@ const ScrollButton = styled.div<{ align?: 'start' | 'end' }>`
   color: #212b36;
 `;
 const StripesWrapper = styled.div`
-  display: flex;
+  display: none;
   gap: 18px;
   align-self: flex-start;
   padding-top: 0.35rem;
+  @media (min-width: 768px) {
+    display: flex;
+  }
 `;
 const ReviewsWrapper = styled.ul`
   list-style: none;

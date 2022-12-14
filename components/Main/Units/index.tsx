@@ -8,8 +8,14 @@ const Wrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   margin-inline: auto;
-  justify-content: center;
+  justify-content: flex-start;
+
   padding-inline: 5%;
+  gap: 15px;
+  @media (min-width: 768px) {
+    gap: 0;
+    justify-content: center;
+  }
 `;
 
 const units = [
